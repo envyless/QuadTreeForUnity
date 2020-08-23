@@ -17,7 +17,7 @@ public class SampleScene : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Space))
         {
             var pos = ScreenToWorldPlane.GetWorldPlanePos();
-            QuadTreeNode<int>.Insert(pos, (int)pos.x);
+            QuadTreeNode<int>.Root.Insert(pos, (int)pos.x);
         }        
     }
 }
