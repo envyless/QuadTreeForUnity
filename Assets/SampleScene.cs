@@ -8,9 +8,7 @@ public class SampleScene : MonoBehaviour
     void Start()
     {
         //init size
-        QuadTreeNode<int>.Init(Vector3.zero, Vector2.one * 100, 100);
-        QuadTreeNode<int>.Insert(Vector3.zero, 5);
-
+        QuadTreeNode<int>.Init(Vector3.zero, Vector2.one * 100, 100);        
     }
 
     // Update is called once per frame
