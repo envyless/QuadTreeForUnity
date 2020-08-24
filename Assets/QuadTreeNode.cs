@@ -100,6 +100,7 @@ public unsafe class QuadTreeNode<T>
             this.IsSettedData = true;
             this.dataPosition = _pos;
             this.data = _data;
+            SetUpViewer();
         }
         return true;
     }
@@ -127,11 +128,15 @@ public unsafe class QuadTreeNode<T>
         //when over capacity
     }
 
+    QuadViewer qv;
     private void SetUpViewer()
     {
-        var qv_prefab = Resources.Load("QuadViewer") as GameObject;
-        var qv_instance = GameObject.Instantiate(qv_prefab);
-        var qv = qv_instance.GetComponent<QuadViewer>();
+        if(qv == null)
+        {
+            var qv_prefab = Resources.Load("QuadViewer") as GameObject;
+            var qv_instance = GameObject.Instantiate(qv_prefab);
+            qv = qv_instance.GetComponent<QuadViewer>();
+        }
         qv.SetQuadTree(this);
     }
 
